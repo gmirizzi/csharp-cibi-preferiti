@@ -5,20 +5,37 @@ Console.WriteLine($"Il tuo cibo preferito è {ciboPrefeUser}");
 var rand = new Random();
 int indexCiboPrefe = rand.Next(cibiPrefe.Length + 1);
 Console.WriteLine("Indice random: " + indexCiboPrefe);
+string mioCiboPrefe = cibiPrefe[indexCiboPrefe];
 Console.WriteLine("Cibo prefe random: " + cibiPrefe[indexCiboPrefe]);
 
 Console.WriteLine($"La lunghezza della classifica è pari a {cibiPrefe.Length}");
 Console.WriteLine("Classifica dei cibi preferiti:");
 for (int i = 0; i < cibiPrefe.Length; i++)
 {
-    Console.WriteLine($"{i+1}. {cibiPrefe[i]}");
+    if (ciboPrefeUser == mioCiboPrefe && cibiPrefe[i] == ciboPrefeUser)
+    {
+        Console.WriteLine($"{i + 1}. {cibiPrefe[i]} --> abbiamo gli stessi gusti");
+    }
+    else if (cibiPrefe[i] == mioCiboPrefe)
+    {
+        Console.WriteLine($"{i + 1}. {cibiPrefe[i]} --> questo è il mio cibo preferito");
+    }
+    else if (cibiPrefe[i] == ciboPrefeUser)
+    {
+        Console.WriteLine($"{i + 1}. {cibiPrefe[i]} --> questo è il tuo cibo preferito");
+    }
+    else
+    {
+        Console.WriteLine($"{i + 1}. {cibiPrefe[i]}");
+    }
 }
 Console.WriteLine("Cibo top: " + cibiPrefe[0]);
 Console.WriteLine("Cibo preferito ma non troppo: " + cibiPrefe[cibiPrefe.Length - 1]);
 if (cibiPrefe.Length % 2 != 0)
 {
     Console.WriteLine("Cibo di mezza classifica: " + cibiPrefe[cibiPrefe.Length / 2]);
-} else
+}
+else
 {
     Console.WriteLine("Cibi di mezza classifica: ");
     Console.WriteLine("1. " + cibiPrefe[cibiPrefe.Length / 2 - 1]);
