@@ -1,4 +1,7 @@
 ﻿string[] cibiPrefe = { "Pizza", "Patata", "Panzerotto", "Carne", "Pesce", "Parmigiana" };
+Console.Write("Qual è il tuo cibo preferito? ");
+string ciboPrefeUser = Console.ReadLine();
+Console.WriteLine($"Il tuo cibo preferito è {ciboPrefeUser}");
 Console.WriteLine($"La lunghezza della classifica è pari a {cibiPrefe.Length}");
 Console.WriteLine("Classifica dei cibi preferiti:");
 for (int i = 0; i < cibiPrefe.Length; i++)
@@ -16,4 +19,3 @@ if (cibiPrefe.Length % 2 != 0)
     Console.WriteLine("1. " + cibiPrefe[cibiPrefe.Length / 2 - 1]);
     Console.WriteLine("2. " + cibiPrefe[cibiPrefe.Length / 2]);
 }
-
