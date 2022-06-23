@@ -6,5 +6,6 @@ for (int i = 0; i < cibiPrefe.Length; i++)
     Console.WriteLine($"{i+1}. {cibiPrefe[i]}");
 }
 Console.WriteLine("Cibo top: " + cibiPrefe[0]);
+Console.WriteLine("Cibo preferito ma non troppo: " + cibiPrefe[cibiPrefe.Length - 1]);
 
 
