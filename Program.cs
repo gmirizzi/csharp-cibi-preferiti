@@ -2,6 +2,11 @@
 Console.Write("Qual è il tuo cibo preferito? ");
 string ciboPrefeUser = Console.ReadLine();
 Console.WriteLine($"Il tuo cibo preferito è {ciboPrefeUser}");
+var rand = new Random();
+int indexCiboPrefe = rand.Next(cibiPrefe.Length + 1);
+Console.WriteLine("Indice random: " + indexCiboPrefe);
+Console.WriteLine("Cibo prefe random: " + cibiPrefe[indexCiboPrefe]);
+
 Console.WriteLine($"La lunghezza della classifica è pari a {cibiPrefe.Length}");
 Console.WriteLine("Classifica dei cibi preferiti:");
 for (int i = 0; i < cibiPrefe.Length; i++)
