@@ -1,6 +1,12 @@
 ﻿string[] cibiPrefe = { "Pizza", "Patata", "Panzerotto", "Carne", "Pesce", "Parmigiana" };
 Console.Write("Qual è il tuo cibo preferito? ");
 string ciboPrefeUser = Console.ReadLine();
+while (!Array.Exists(cibiPrefe, element => element == ciboPrefeUser))
+{
+    Console.WriteLine($"Il cibo non è nella classifica dei cibi preferiti");
+    Console.Write("Inseriscine un altro. ");
+    ciboPrefeUser = Console.ReadLine();
+}
 Console.WriteLine($"Il tuo cibo preferito è {ciboPrefeUser}");
 var rand = new Random();
 int indexCiboPrefe = rand.Next(cibiPrefe.Length + 1);
