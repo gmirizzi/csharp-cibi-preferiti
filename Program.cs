@@ -1,32 +1,32 @@
 ﻿string[] cibiPrefe = { "Pizza", "Patata", "Panzerotto", "Carne", "Pesce", "Parmigiana" };
 Console.Write("Qual è il tuo cibo preferito? ");
-string ciboPrefeUser = Console.ReadLine();
-while (!Array.Exists(cibiPrefe, element => element == ciboPrefeUser))
+string ciboPrefeUser = Console.ReadLine().ToLower();
+while (!Array.Exists(cibiPrefe, element => element.ToLower() == ciboPrefeUser))
 {
     Console.WriteLine($"Il cibo non è nella classifica dei cibi preferiti");
     Console.Write("Inseriscine un altro. ");
-    ciboPrefeUser = Console.ReadLine();
+    ciboPrefeUser = Console.ReadLine().ToLower();
 }
 Console.WriteLine($"Il tuo cibo preferito è {ciboPrefeUser}");
 var rand = new Random();
 int indexCiboPrefe = rand.Next(cibiPrefe.Length + 1);
 Console.WriteLine("Indice random: " + indexCiboPrefe);
-string mioCiboPrefe = cibiPrefe[indexCiboPrefe];
+string mioCiboPrefe = cibiPrefe[indexCiboPrefe].ToLower();
 Console.WriteLine("Cibo prefe random: " + cibiPrefe[indexCiboPrefe]);
 
 Console.WriteLine($"La lunghezza della classifica è pari a {cibiPrefe.Length}");
 Console.WriteLine("Classifica dei cibi preferiti:");
 for (int i = 0; i < cibiPrefe.Length; i++)
 {
-    if (ciboPrefeUser == mioCiboPrefe && cibiPrefe[i] == ciboPrefeUser)
+    if (ciboPrefeUser == mioCiboPrefe && cibiPrefe[i].ToLower() == ciboPrefeUser)
     {
         Console.WriteLine($"{i + 1}. {cibiPrefe[i]} --> abbiamo gli stessi gusti");
     }
-    else if (cibiPrefe[i] == mioCiboPrefe)
+    else if (cibiPrefe[i].ToLower() == mioCiboPrefe)
     {
         Console.WriteLine($"{i + 1}. {cibiPrefe[i]} --> questo è il mio cibo preferito");
     }
-    else if (cibiPrefe[i] == ciboPrefeUser)
+    else if (cibiPrefe[i].ToLower() == ciboPrefeUser)
     {
         Console.WriteLine($"{i + 1}. {cibiPrefe[i]} --> questo è il tuo cibo preferito");
     }
