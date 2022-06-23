@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿string[] cibiPrefe = {"Pizza", "Patata", "Panzerotto", "Pasta", "Carne", "Pesce"};
+
+
 Console.WriteLine("Hello, World!");
